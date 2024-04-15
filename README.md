@@ -29,9 +29,9 @@ This work is based on the following resources:
     - Paper: "ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems" (https://link.springer.com/article/10.1007/s11721-012-0072-5)
     - Repository: https://github.com/ilpincy/argos3
 
-To cite this, use the following paper:
+Paper details:
 * Author: Marck Herzon C. Barrion
-* Paper: []
+* Title: []
 
 ## Instructions
 

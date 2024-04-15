@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<argos-configuration>
+
+  <!-- ************************* -->
+  <!-- * General configuration * -->
+  <!-- ************************* -->
+  <framework>
+    <experiment length="200" ticks_per_second="10" />
+  </framework>
+
+  <!-- *************** -->
+  <!-- * Controllers * -->
+  <!-- *************** -->
+  <controllers>
+    <python_controller id="python" library="build/libpy_controller_interface.so">
+      <!-- Normal actuator/sensor configuration follows -->
+      <actuators>
+        <!-- Leds Actuator -->
+        <leds implementation="default" medium="leds" />
+      </actuators>
+      <sensors>
+      </sensors>
+      <!-- No required configuration -->
+    
+      <!-- Optionally, you can pass a script as a controller parameter: -->
+      <params script="examples/3/crazyflie_led.py" timeRate="1"/>
+    </python_controller>
+
+  </controllers>
+
+  <!-- *********************** -->
+  <!-- * Arena configuration * -->
+  <!-- *********************** -->
+  <arena size="3, 3, 1" center="0,0,0.5">
+    <floor id="f" source="image" path="examples/lightbrownfloor.jpg" />
+    <crazyflie id="100">
+      <body position="0.0,0.0,0.5" orientation="0,0,0" />
+      <controller config="python" />
+    </crazyflie>
+  </arena>
+
+  <!-- ******************* -->
+  <!-- * Physics engines * -->
+  <!-- ******************* -->
+  <physics_engines>
+      <pointmass3d id="pm3d" />
+  </physics_engines>
+
+  <!-- ********* -->
+  <!-- * Media * -->
+  <!-- ********* -->
+  <media>
+     <led id="leds" />
+  </media>
+
+  <!-- ****************** -->
+  <!-- * Visualization * -->
+  <!-- ****************** -->
+  <visualization>
+
+    <!-- ************************************************************************ -->
+    <!-- * To activate the Lua editor, just use the 'lua_editor' flag attribute * -->
+    <!-- ************************************************************************ -->
+    <qt-opengl>
+      <camera>
+        <placements>
+            <placement index="0" position="-0.462401,0.0041299,-0.325312" look_at="0.0537135,-0.000804292,0.531193" up="-0.856466,0.00818804,0.516138" lens_focal_length="65" />
+            <placement index="1" position="-2,0,2" up="1,0,0"  look_at="0.50,0,0" lens_focal_length="65" />
+        </placements>
+      </camera>
+    </qt-opengl>
+
+  </visualization>
+
+</argos-configuration>

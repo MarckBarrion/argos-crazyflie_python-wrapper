@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<argos-configuration>
+
+  <!-- ************************* -->
+  <!-- * General configuration * -->
+  <!-- ************************* -->
+  <framework>
+    <experiment length="52" ticks_per_second="10" />
+  </framework>
+
+  <!-- *************** -->
+  <!-- * Controllers * -->
+  <!-- *************** -->
+  <controllers>
+    <python_controller id="python" library="build/libpy_controller_interface.so">
+      <!-- Normal actuator/sensor configuration follows -->
+      <actuators>
+        <!-- Quadrotor Position Actuator -->
+        <quadrotor_position implementation="default"/>
+      </actuators>
+      <sensors>
+        <!-- Proximity Sensor -->
+        <crazyflie_proximity implementation="default" show_rays="true" />
+      </sensors>
+      <!-- No required configuration -->
+      
+      <!-- Optionally, you can pass a script as a controller parameter: -->
+      <params script="examples/5/crazyflie_proximity.py" timeRate="1"/>
+    </python_controller>
+
+  </controllers>
+
+  <!-- *********************** -->
+  <!-- * Arena configuration * -->
+  <!-- *********************** -->
+  <arena size="1.6,1.6,2" center="0,0,1.0">
+    <floor id="f" source="image" path="examples/lightbrownfloor.jpg" />
+
+    <box id="wall_north" size="1.6,0.05,3.0" movable="false">
+      <body position="0,0.8,0" orientation="0,0,0" />
+    </box>
+    <box id="wall_east" size="0.05,1.6,3.0" movable="false">
+      <body position="0.8,0,0" orientation="0,0,0" />
+    </box>
+    <box id="wall_west" size="0.05,1.6,3.0" movable="false">
+      <body position="-0.8,0,0" orientation="0,0,0" />
+    </box>
+    <crazyflie id="100">
+      <body position="0.0,0.0,0.30" orientation="0,0,0" />
+      <controller config="python" />
+    </crazyflie>
+  </arena>
+
+  <!-- ******************* -->
+  <!-- * Physics engines * -->
+  <!-- ******************* -->
+  <physics_engines>
+      <pointmass3d id="pm3d" />
+  </physics_engines>
+
+  <!-- ********* -->
+  <!-- * Media * -->
+  <!-- ********* -->
+  <media />
+
+  <!-- ****************** -->
+  <!-- * Visualization * -->
+  <!-- ****************** -->
+  <visualization>
+
+    <!-- ************************************************************************ -->
+    <!-- * To activate the Lua editor, just use the 'lua_editor' flag attribute * -->
+    <!-- ************************************************************************ -->
+    <qt-opengl>
+      <camera>
+        <placements>
+          <placement index="0" position="-0.0229079,-9.72558,8.29434" look_at="-0.0252359,-8.93918,7.67663" up="-0.00182889,0.61777,0.786357" lens_focal_length="185" />
+        </placements>     
+      </camera>
+    </qt-opengl>
+
+  </visualization>
+
+</argos-configuration>

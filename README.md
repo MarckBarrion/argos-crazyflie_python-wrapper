@@ -1,6 +1,6 @@
 # ARGoS-Crazyflie Python Wrapper
 
-# About
+## About
 
 This repository provides a python wrapper for the Crazyflie nano-quadcopter of Bitcraze for the ARGoS Multi-robot Simulator.
 
@@ -32,7 +32,7 @@ To cite this, use the following paper:
     - Author: Marck Herzon C. Barrion
     - Paper: []
 
-# Instructions
+## Instructions
 
 1. To use the code, clone the repository
 ```shell
@@ -55,7 +55,7 @@ make
 sudo make install
 ```
 
-# Running Examples
+## Running Examples
 
 Run examples using the following codes:
 

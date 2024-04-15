@@ -10,8 +10,9 @@ Description:
 * This wrapper allows for the control of the Crazyflie simulator model using Python scripts and controllers.
 * This project extends the functionalities of the Crazyflie model developed by Stolfi and Danoy (see details below), adding the following features:
     - Multi-ranger Deck (Proximity Sensor)
-    - Ground Sensor (IR-based sensor)
-    - Range and Bearing Sensor and Actuator
+    - Ground Sensor (IR-based sensor) 
+    - Range and Bearing Sensor and Actuator (TODO)
+    - 
 
 This work is based on the following resources:
 * ARGoS-Python Wrapper 

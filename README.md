@@ -34,9 +34,17 @@ To cite this, use the following paper:
 
 ## Instructions
 
-1. To use the code, clone the repository
+1. To use the code, install the ARGoS-Crazyflie baseline model.
+
+* The extended version is used in this project: 
+    - Link: https://github.com/MarckBarrion/argos-crazyflie_python-baseline
+
+* To view the original work, use Stolfi and Danoy's project.
+    - Link: https://gitlab.uni.lu/adars/crazyflie
+
+2. Once installed, clone this repository
 ```shell
-git clone 
+git clone https://github.com/MarckBarrion/argos-crazyflie_python-wrapper
 ```
 
 2. Go to the installation root directory

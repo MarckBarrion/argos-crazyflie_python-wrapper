@@ -13,19 +13,19 @@ Description:
     - Ground Sensor (IR-based sensor)
     - Range and Bearing Sensor and Actuator
 
-This work is based from the following:
+This work is based on the following resources:
 * ARGoS-Python Wrapper 
     - Author: Ken Hasselmann
     - Repository: https://github.com/KenN7/argos-python
 
 * ARGoS-Crazyflie Model
     - Authors: Daniel H. Stolfi and Gregoire Danoy
-    - Paper: An ARGoS plug-in for the Crazyflie drone (https://arxiv.org/abs/2401.16948)
+    - Paper: "An ARGoS plug-in for the Crazyflie drone" (https://arxiv.org/abs/2401.16948)
     - Repository: https://gitlab.uni.lu/adars/crazyflie
 
 * ARGoS Simulator
     - Author: Carlo Pinciroli
-    - Paper: ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems (https://link.springer.com/article/10.1007/s11721-012-0072-5)
+    - Paper: "ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems" (https://link.springer.com/article/10.1007/s11721-012-0072-5)
     - Repository: https://github.com/ilpincy/argos3
 
 To cite this, use the following paper:

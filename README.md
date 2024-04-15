@@ -29,8 +29,8 @@ This work is based on the following resources:
     - Repository: https://github.com/ilpincy/argos3
 
 To cite this, use the following paper:
-    - Author: Marck Herzon C. Barrion
-    - Paper: []
+    * Author: Marck Herzon C. Barrion
+    * Paper: []
 
 ## Instructions
 

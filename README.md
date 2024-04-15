@@ -2,15 +2,15 @@
 
 ## About
 
-This repository provides a python wrapper for the Crazyflie nano-quadcopter of Bitcraze for the ARGoS Multi-robot Simulator.
+This repository provides a Python wrapper for the Crazyflie nano-quadcopter from Bitcraze, designed for use with the ARGoS Multi-robot Simulator.
 
 **Author: Marck Herzon C. Barrion (2024)**
 
 Description:
-* This wrapper allows control of the crazyflie simulator model using python scripts and controllers.
-* This project extends the functionalities of the Crazyflie model of Stolfi and Danoy (see details below) to include the following:
+* This wrapper allows for the control of the Crazyflie simulator model using Python scripts and controllers.
+* This project extends the functionalities of the Crazyflie model developed by Stolfi and Danoy (see details below), adding the following features:
     - Multi-ranger Deck (Proximity Sensor)
-    - Ground sensor (IR-based sensor)
+    - Ground Sensor (IR-based sensor)
     - Range and Bearing Sensor and Actuator
 
 This work is based from the following:

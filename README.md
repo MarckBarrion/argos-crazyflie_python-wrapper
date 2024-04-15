@@ -59,27 +59,27 @@ sudo make install
 
 Run examples using the following codes:
 
-1. Example 1 - Speed Actuator and Positioning Sensor
+1. Speed Actuator and Positioning Sensor
 ```shell
 argos3 -c experiments/1/crazyflie_speed.argos
 ```
 
-2. Example 2 - Position Actuator and Positioning Sensor
+2. Position Actuator and Positioning Sensor
 ```shell
 argos3 -c experiments/2/crazyflie_position.argos
 ```
 
-3. Example 3 - Led Actuator
+3. Led Actuator
 ```shell
 argos3 -c experiments/3/crazyflie_led.argos
 ```
 
-4. Example 4 - Battery Level Sensor
+4. Battery Level Sensor
 ```shell
 argos3 -c experiments/4/crazyflie_battery.argos
 ```
 
-5. Example 5 - Battery Level Sensor
+5. Battery Level Sensor
 ```shell
 argos3 -c experiments/5/crazyflie_battery.argos
 ```

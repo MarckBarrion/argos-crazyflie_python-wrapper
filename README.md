@@ -12,6 +12,7 @@ Description:
     - Multi-ranger Deck (Proximity Sensor)
     - Ground Sensor (IR-based sensor) 
     - (TODO) Range and Bearing Sensor and Actuator
+    - (TODO) Distribution XML
     - 
 
 This work is based on the following resources:

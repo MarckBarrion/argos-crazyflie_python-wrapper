@@ -135,6 +135,10 @@ void ActusensorsWrapper::CreateSensor(const std::string str_name, CCI_Sensor* pc
         m_cCrazyflieRangeAndBearingWrapper.m_pcRABS = (CCI_RangeAndBearingSensor*)pc_sensor;    
 
     }
+    // Crazyflie ground sensor
+    else if (str_name == "crazyflie_ground") {
+        m_cCrazyflieGroundWrapper.m_pcGroundSensor = dynamic_cast<CCI_GroundSensor*>(pc_sensor);
+    } 
 
 }
 
@@ -254,7 +258,8 @@ BOOST_PYTHON_MODULE(libpy_controller_interface) {
         .add_property("leds", &ActusensorsWrapper::m_cCrazyflieLedsActuatorWrapper)
         .add_property("crazyflie_battery", &ActusensorsWrapper::m_cCrazyflieBatteryWrapper)
         .add_property("crazyflie_proximity", &ActusensorsWrapper::m_cCrazyflieProximityWrapper)
-        .add_property("range_and_bearing", &ActusensorsWrapper::m_cCrazyflieRangeAndBearingWrapper);
+        .add_property("range_and_bearing", &ActusensorsWrapper::m_cCrazyflieRangeAndBearingWrapper)
+        .add_property("crazyflie_ground", &ActusensorsWrapper::m_cCrazyflieGroundWrapper);
 
     // Export "QTOpenGLUserFunctionsWrapper" that contains qtuser draw functions
     class_<CQTOpenGLUserFunctionsWrapper, boost::noncopyable>("qtuser_wrapper", no_init)
@@ -434,6 +439,13 @@ BOOST_PYTHON_MODULE(libpy_controller_interface) {
         .def("clear_data", &CCrazyflieRangeAndBearingWrapper::ClearData)
         .def("set_data", &CCrazyflieRangeAndBearingWrapper::SetData)
         .def("get_readings", &CCrazyflieRangeAndBearingWrapper::GetReadings);
+    /****************************************/
+    /****************************************/
+
+    // Export "CrazyflieGroundWrapper", wrapper of CCI_GroundSensor.
+    class_<CCrazyflieGroundWrapper, boost::noncopyable>("crazyflie_ground_sensor_wrapper", no_init)
+        .def("get_readings", &CCrazyflieGroundWrapper::GetReadings);
+
     /****************************************/
     /****************************************/
     

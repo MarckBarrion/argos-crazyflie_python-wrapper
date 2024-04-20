@@ -73,31 +73,31 @@ Run examples using the following codes:
 
 1. Speed Actuator and Positioning Sensor
 ```shell
-argos3 -c experiments/1/crazyflie_speed.argos
+argos3 -c examples/1/crazyflie_speed.argos
 ```
 
 2. Position Actuator and Positioning Sensor
 ```shell
-argos3 -c experiments/2/crazyflie_position.argos
+argos3 -c examples/2/crazyflie_position.argos
 ```
 
 3. Led Actuator
 ```shell
-argos3 -c experiments/3/crazyflie_led.argos
+argos3 -c examples/3/crazyflie_led.argos
 ```
 
 4. Battery Level Sensor
 ```shell
-argos3 -c experiments/4/crazyflie_battery.argos
+argos3 -c examples/4/crazyflie_battery.argos
 ```
 
 5. Battery Level Sensor
 ```shell
-argos3 -c experiments/5/crazyflie_battery.argos
+argos3 -c examples/5/crazyflie_battery.argos
 ```
 
 To test all the functionalities in one experiment, run the "crazyflie_general.argos" example.
 
 ```shell
-argos3 -c experiments/crazyflie_general.argos
+argos3 -c examples/crazyflie_general.argos
 ```

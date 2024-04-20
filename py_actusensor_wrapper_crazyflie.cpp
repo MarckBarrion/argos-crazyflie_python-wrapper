@@ -249,5 +249,26 @@ boost::python::list CCrazyflieRangeAndBearingWrapper::GetReadings() const {
     return ActusensorsWrapper::ToPythonList(m_pcRABS->GetReadings());
 }
 
+
+/****************************************/
+/****************************************/
+
+CCrazyflieGroundWrapper::CCrazyflieGroundWrapper() {}
+
+boost::python::list CCrazyflieGroundWrapper::GetReadings() const {
+    if (m_pcGroundSensor == nullptr) {
+        ActusensorsWrapper::Logprint(
+            "Ground Sensor not implemented or not stated in XML config.");
+        return {};
+    }
+    // Return sensor readings as a python list
+    boost::python::list readings;
+    readings.append((Real) m_pcGroundSensor->GetReadings()[0]);
+    readings.append((Real) m_pcGroundSensor->GetReadings()[1]); 
+    readings.append((Real) m_pcGroundSensor->GetReadings()[2]);
+
+    return readings;
+}
+
 /****************************************/
 /****************************************/

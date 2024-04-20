@@ -48,6 +48,7 @@
 #include <argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_range_and_bearing_actuator.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_range_and_bearing_sensor.h>
+#include <argos3/plugins/robots/generic/control_interface/ci_ground_sensor.h>
 #include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_model.h>
 #include <argos3/plugins/simulator/entities/quadrotor_entity.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h>
@@ -190,6 +191,21 @@ class CCrazyflieRangeAndBearingWrapper {
     // table. The data table is exposed as a c_byte_array.
     boost::python::list GetReadings() const;
 };
+
+/****************************************/
+/****************************************/
+
+// Wrapper for Crazyflie Ground Sensor
+class CCrazyflieGroundWrapper {
+public:
+    CCrazyflieGroundWrapper();
+    ~CCrazyflieGroundWrapper(){};
+
+    argos::CCI_GroundSensor* m_pcGroundSensor;
+
+    boost::python::list GetReadings() const;
+};
+
 
 } //namespace argos
 

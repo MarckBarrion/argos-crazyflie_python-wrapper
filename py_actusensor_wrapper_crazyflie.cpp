@@ -219,3 +219,35 @@ boost::python::list CCrazyflieProximityWrapper::GetReadings() const {
 
 /****************************************/
 /****************************************/
+
+CCrazyflieRangeAndBearingWrapper::CCrazyflieRangeAndBearingWrapper() {}
+
+void CCrazyflieRangeAndBearingWrapper::ClearData() {
+    if (m_pcRABA == nullptr) {
+        ActusensorsWrapper::Logprint("RABA not implemented or not stated in XML config.");
+        return;
+    }
+    m_pcRABA->ClearData();
+}
+// Set the i-th bit of the data table.
+void CCrazyflieRangeAndBearingWrapper::SetData(const size_t un_idx, const UInt8 un_value) {
+    if (m_pcRABA == nullptr) {
+        ActusensorsWrapper::Logprint("RABA not implemented or not stated in XML config.");
+        return;
+    }
+    m_pcRABA->SetData(un_idx, un_value);
+}
+// TODO: Set all bits at once
+// Return the readings obtained at this control step.
+// Each reading contains the range, the horizontal bearing, the vertical bearing and the data table.
+// The data table is exposed as a c_byte_array.
+boost::python::list CCrazyflieRangeAndBearingWrapper::GetReadings() const {
+    if (m_pcRABS == nullptr) {
+        ActusensorsWrapper::Logprint("RABA not implemented or not stated in XML config.");
+        return {};
+    }
+    return ActusensorsWrapper::ToPythonList(m_pcRABS->GetReadings());
+}
+
+/****************************************/
+/****************************************/

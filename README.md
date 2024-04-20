@@ -11,9 +11,8 @@ Description:
 * This project extends the functionalities of the Crazyflie model developed by Stolfi and Danoy (see details below), adding the following features:
     - Multi-ranger Deck (Proximity Sensor)
     - Ground Sensor (IR-based sensor) 
-    - (TODO) Range and Bearing Sensor and Actuator
-    - (TODO) Distribution XML
-    - 
+    - Range and Bearing Sensor and Actuator
+    - (TODO) Entity Distribution - XML
 
 This work is based on the following resources:
 * ARGoS-Python Wrapper 

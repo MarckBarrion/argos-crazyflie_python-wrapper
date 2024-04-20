@@ -56,10 +56,10 @@ void ActusensorsWrapper::CreateActu(const std::string str_name, CCI_Actuator* pc
     if (str_name == "differential_steering") {
         m_cWheelsWrapper.m_pcWheels = dynamic_cast<CCI_DifferentialSteeringActuator*>(pc_actu);
         m_cWheelsWrapper.m_pcWheels->Init(t_node);
-    } else if (str_name == "old_leds") {
+    } else if (str_name == "generic_leds") {
         m_cLedsWrapper.m_pcLeds = (CCI_LEDsActuator*)pc_actu;
         // m_cLedsWrapper.m_pcLeds->Init(t_node);
-    } else if (str_name == "range_and_bearing") {
+    } else if (str_name == "generic_range_and_bearing") {
         m_cRangeAndBearingWrapper.m_pcRABA = (CCI_RangeAndBearingActuator*)pc_actu;
         // m_cRangeAndBearingWrapper.m_pcRABA->Init(t_node);
     }
@@ -79,6 +79,10 @@ void ActusensorsWrapper::CreateActu(const std::string str_name, CCI_Actuator* pc
     // Crazyflie leds actuator
     else if (str_name == "leds") {
         m_cCrazyflieLedsActuatorWrapper.m_pcLedAct = (CCI_LEDsActuator*)pc_actu;
+    }
+    // Crazyflie range and bearing actuator
+    else if (str_name == "range_and_bearing") {
+        m_cCrazyflieRangeAndBearingWrapper.m_pcRABA = (CCI_RangeAndBearingActuator*)pc_actu;
     }
     /****************************************/
     /****************************************/
@@ -100,13 +104,13 @@ void ActusensorsWrapper::CreateSensor(const std::string str_name, CCI_Sensor* pc
         m_cPerspectiveCameraWrapper.m_pcPerspCam = (CCI_ColoredBlobPerspectiveCameraSensor*)pc_sensor;
         // m_cPerspectiveCameraWrapper.m_pcPerspCam->Init(t_node);
 
-    } else if (str_name == "range_and_bearing") {
+    } else if (str_name == "generic_range_and_bearing") {
         m_cRangeAndBearingWrapper.m_pcRABS = (CCI_RangeAndBearingSensor*)pc_sensor;    
         // m_cRangeAndBearingWrapper.m_pcRABS->Init(t_node);
 
     } else if (str_name == "differential_steering") {
         m_cDifferentialSteeringSensor.m_pcDifferentialSteeringSensor = (CCI_DifferentialSteeringSensor*)pc_sensor;
-    } else if (str_name == "old_positioning") {
+    } else if (str_name == "generic_positioning") {
         m_cPositioningWrapper.m_pcPositioning = (CCI_PositioningSensor*)pc_sensor;
     } 
 
@@ -125,6 +129,11 @@ void ActusensorsWrapper::CreateSensor(const std::string str_name, CCI_Sensor* pc
     // Crazyflie proximity sensor
     else if (str_name == "crazyflie_proximity") {
         m_cCrazyflieProximityWrapper.m_pcProximity = (CCI_ProximitySensor*)pc_sensor;
+    }
+    // Crazyflie range and bearing sensor
+    else if (str_name == "range_and_bearing") {
+        m_cCrazyflieRangeAndBearingWrapper.m_pcRABS = (CCI_RangeAndBearingSensor*)pc_sensor;    
+
     }
 
 }
@@ -244,7 +253,8 @@ BOOST_PYTHON_MODULE(libpy_controller_interface) {
         .add_property("quadrotor_position", &ActusensorsWrapper::m_cCrazyfliePositionActuatorWrapper)
         .add_property("leds", &ActusensorsWrapper::m_cCrazyflieLedsActuatorWrapper)
         .add_property("crazyflie_battery", &ActusensorsWrapper::m_cCrazyflieBatteryWrapper)
-        .add_property("crazyflie_proximity", &ActusensorsWrapper::m_cCrazyflieProximityWrapper);
+        .add_property("crazyflie_proximity", &ActusensorsWrapper::m_cCrazyflieProximityWrapper)
+        .add_property("range_and_bearing", &ActusensorsWrapper::m_cCrazyflieRangeAndBearingWrapper);
 
     // Export "QTOpenGLUserFunctionsWrapper" that contains qtuser draw functions
     class_<CQTOpenGLUserFunctionsWrapper, boost::noncopyable>("qtuser_wrapper", no_init)
@@ -417,6 +427,16 @@ BOOST_PYTHON_MODULE(libpy_controller_interface) {
 
     /****************************************/
     /****************************************/
+
+    // Export RangeAndBearingWrapper, wrapper of CCI_RangeAndBearingActuator and
+    // CCI_RangeAndBearingSensor.
+    class_<CCrazyflieRangeAndBearingWrapper, boost::noncopyable>("m_cCrazyflieRangeAndBearingWrapper", no_init)
+        .def("clear_data", &CCrazyflieRangeAndBearingWrapper::ClearData)
+        .def("set_data", &CCrazyflieRangeAndBearingWrapper::SetData)
+        .def("get_readings", &CCrazyflieRangeAndBearingWrapper::GetReadings);
+    /****************************************/
+    /****************************************/
+    
     // Export the CVector3 class
     class_<argos::CVector3>("vector3", init<>())
         .def(init<Real, Real, Real>())  // Constructor with X, Y, Z values

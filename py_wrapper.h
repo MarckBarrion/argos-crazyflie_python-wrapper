@@ -126,6 +126,8 @@ class ActusensorsWrapper {
     CCrazyflieLedsActuatorWrapper m_cCrazyflieLedsActuatorWrapper;
     CCrazyflieBatteryWrapper m_cCrazyflieBatteryWrapper;
     CCrazyflieProximityWrapper m_cCrazyflieProximityWrapper;
+    CCrazyflieRangeAndBearingWrapper m_cCrazyflieRangeAndBearingWrapper;
+
 
     /****************************************/
     /****************************************/

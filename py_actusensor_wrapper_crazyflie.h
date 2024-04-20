@@ -46,6 +46,8 @@
 #include <argos3/plugins/robots/crazyflie/simulator/crazyflie_entity.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_leds_actuator.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h>
+#include <argos3/plugins/robots/generic/control_interface/ci_range_and_bearing_actuator.h>
+#include <argos3/plugins/robots/generic/control_interface/ci_range_and_bearing_sensor.h>
 #include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_model.h>
 #include <argos3/plugins/simulator/entities/quadrotor_entity.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h>
@@ -169,6 +171,25 @@ public:
 
 /****************************************/
 /****************************************/
+// Wrapper for the Range and Bearing Sensor and Actuator.
+// Both of them are exposed as a single property of the robot, for simplicity.
+class CCrazyflieRangeAndBearingWrapper {
+  public:
+    CCrazyflieRangeAndBearingWrapper();
+    ~CCrazyflieRangeAndBearingWrapper(){};
+
+    argos::CCI_RangeAndBearingActuator* m_pcRABA;
+    argos::CCI_RangeAndBearingSensor* m_pcRABS;
+    // Erase the readings.
+    void ClearData();
+    // Set the i-th bit of the data table.
+    void SetData(const size_t un_idx, const UInt8 un_value);
+    // TODO: Set all bits at once
+    // Return the readings obtained at this control step.
+    // Each reading contains the range, the horizontal bearing, the vertical bearing and the data
+    // table. The data table is exposed as a c_byte_array.
+    boost::python::list GetReadings() const;
+};
 
 } //namespace argos
 

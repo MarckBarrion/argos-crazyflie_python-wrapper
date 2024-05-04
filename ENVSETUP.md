@@ -173,6 +173,11 @@ export MAINFOLDER="$HOME/blockchain-simulations"
 ## Additional Dependencies
 Install the additional dependencies for the ARGoS-Blockchain project
 
+```shell
+pip3 install rpyc aenum hexbytes web3 graphviz seaborn pydotplus networkx[default]
+
+```
+
 1.	RPyC (https://rpyc.readthedocs.io/)
 ```shell
 $ pip3 install rpyc

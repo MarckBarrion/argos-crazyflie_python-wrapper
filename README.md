@@ -12,7 +12,7 @@ Description:
     - Multi-ranger Deck (Proximity Sensor)
     - Ground Sensor (IR-based Sensor) 
     - Range and Bearing Sensor and Actuator
-    - (TODO) Entity Distribution - XML
+    - Entity Distribution - XML
 
 This work is based on the following resources:
 * ARGoS-Python Wrapper 
@@ -34,7 +34,7 @@ Paper details:
 * Title: []
   
 ## Pre-requisites
-TODO
+See ENVSETUP.md for a complete guide on requirements.
 
 ## Instructions
 

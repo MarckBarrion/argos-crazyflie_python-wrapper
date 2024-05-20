@@ -26,18 +26,17 @@ This work is based on the following resources:
 
 * ARGoS-Crazyflie Model
     - Authors: Daniel H. Stolfi and Gregoire Danoy
-    - Paper: "An ARGoS plug-in for the Crazyflie drone" (https://arxiv.org/abs/2401.16948)
+    - Paper: ["An ARGoS plug-in for the Crazyflie drone"](https://arxiv.org/abs/2401.16948)
     - Repository: https://gitlab.uni.lu/adars/crazyflie
 
 * ARGoS Simulator
     - Author: Carlo Pinciroli
-    - Paper: "ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems" (https://link.springer.com/article/10.1007/s11721-012-0072-5)
+    - Paper: ["ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems"](https://link.springer.com/article/10.1007/s11721-012-0072-5)
     - Repository: https://github.com/ilpincy/argos3
 
   
 ## Pre-requisites
-See ENVSETUP.md[sudo apt update && sudo apt install github-desktop
-] for a complete guide on system and library requirements and dependencies.
+See [ENVSETUP.md](https://github.com/marckbarrion/argos-crazyflie_python/blob/main/ENVSETUP.md#environmental-setup-for-the-crazyflie-swarm-blockchain-project) for a complete guide on system and library requirements and dependencies.
 
 ## Instructions
 

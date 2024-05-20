@@ -6,6 +6,11 @@ This repository provides a Python wrapper for the Crazyflie nano-quadcopter from
 
 **Author: Marck Herzon C. Barrion (2024)**
 
+To cite, use the paper details:
+* Author: Marck Herzon C. Barrion
+* Title: [Blockchain-Enabled Consensus in Swarm Robotics: Integration with Crazyflie Drones and ARGoS]
+* doi: 
+
 Description:
 * This wrapper allows for the control of the Crazyflie simulator model using Python scripts and controllers.
 * This project extends the functionalities of the Crazyflie model developed by Stolfi and Danoy (see details below), adding the following features:
@@ -29,12 +34,10 @@ This work is based on the following resources:
     - Paper: "ARGoS: a Modular, Parallel, Multi-Engine Simulator for Multi-Robot Systems" (https://link.springer.com/article/10.1007/s11721-012-0072-5)
     - Repository: https://github.com/ilpincy/argos3
 
-Paper details:
-* Author: Marck Herzon C. Barrion
-* Title: []
   
 ## Pre-requisites
-See ENVSETUP.md for a complete guide on requirements.
+See ENVSETUP.md[sudo apt update && sudo apt install github-desktop
+] for a complete guide on system and library requirements and dependencies.
 
 ## Instructions
 

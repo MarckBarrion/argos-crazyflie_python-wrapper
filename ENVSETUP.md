@@ -1,7 +1,7 @@
 # Environmental Setup for the Crazyflie Swarm-Blockchain Project
 by: Marck Herzon Barrion (2024)
 
-Based from the work of Dr. Volker Strobel: https://iridia.ulb.ac.be/~vstrobel/articles/StrPacDor2023scirobotics.pdf
+Some sections adapted from the work of Dr. Volker Strobel et al.: https://iridia.ulb.ac.be/~vstrobel/articles/StrPacDor2023scirobotics.pdf
 
 ## Installation of ARGoS: 
 1.	Install dependencies:
